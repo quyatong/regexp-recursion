@@ -15,7 +15,7 @@ var recursion = function (obj, reg, func) {
     else if ({}.toString.call(obj) == '[object Object]') {
         for (var key in obj) {
             if (new RegExp(reg).test(key)) {
-                func(key, obj[key]);
+                func(key, obj[key], obj);
             }
             else {
                 recursion(obj[key], reg, func);
