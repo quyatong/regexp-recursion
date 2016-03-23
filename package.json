@@ -1,0 +1,23 @@
+{
+  "name": "regexp-recursion",
+  "version": "0.0.1",
+  "description": "use regexp as filter, do recursive computing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quyatong/regexp-recursion.git"
+  },
+  "keywords": [
+    "regexp",
+    "recursion"
+  ],
+  "author": "quyatong@126.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quyatong/regexp-recursion/issues"
+  },
+  "homepage": "https://github.com/quyatong/regexp-recursion#readme"
+}
