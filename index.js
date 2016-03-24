@@ -1,3 +1,35 @@
+
+/**
+ * 判断是否是对象
+ *
+ * @param  {Object}  obj 要判断的对象
+ * @return {Boolean}     判断结果
+ */
+var isObject = function (obj) {
+    return {}.toString.call(obj) == '[object Object]';
+};
+
+/**
+ * 判断是否是数组
+ *
+ * @param  {Object}  obj 要判断的对象
+ * @return {Boolean}     判断结果
+ */
+var isArray = function (obj) {
+    return {}.toString.call(obj) == '[object Array]';
+};
+
+
+/**
+ * 判断是否是简单类型
+ *
+ * @param  {Object}  obj 要判断的对象
+ * @return {Boolean}     判断结果
+ */
+var isSimple = function (obj) {
+    return typeof obj !== 'object';
+};
+
 /**
  * 使用正则做匹配条件 深度递归
  *
@@ -7,14 +39,17 @@
  */
 var recursion = function (obj, reg, func) {
 
-    if ({}.toString.call(obj) == '[object Array]') {
+    if (isArray(obj)) {
         obj.forEach(function (item) {
             recursion(item, reg, func);
         });
     }
-    else if ({}.toString.call(obj) == '[object Object]') {
+    else if (isObject) {
         for (var key in obj) {
-            if (new RegExp(reg).test(key)) {
+            if (
+                isSimple(obj[key])
+                && new RegExp(reg).test(key)
+            ) {
                 func(key, obj[key], obj);
             }
             else {
@@ -25,4 +60,5 @@ var recursion = function (obj, reg, func) {
 };
 
 
+module.exports = recursion;
 module.exports = recursion;
